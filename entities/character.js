@@ -1,10 +1,10 @@
 import { randomUUID } from "node:crypto";
 export class Character {
-  constructor(char, userId) {
-    this.id = randomUUID;
-    this.name = char.name;
-    this.image = char.image;
-    this.userId = userId
+  constructor(character, userId) {
+    this.id = character.id ?? randomUUID();
+    this.name = character.name;
+    this.image = character.image;
+    this.userId = userId;
   }
 
   getCharacter() {
@@ -12,7 +12,7 @@ export class Character {
       id: this.id,
       name: this.name,
       image: this.image,
-      userId: this.userId
+      userId: this.userId,
     };
   }
 }
