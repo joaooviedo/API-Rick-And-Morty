@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+
 export class Character {
   constructor(character, userId) {
     this.id = character.id ?? randomUUID();
