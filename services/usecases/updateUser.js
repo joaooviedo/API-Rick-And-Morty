@@ -6,7 +6,7 @@ export class UpdateUserUseCase {
     this.findUserById = findUserById;
   }
   async exece(userUpdated, userId) {
-    const userToUpdate = await this.findUserById(userId);
+    const userToUpdate = await this.findUserById.execute(userId);
 
     if (!userToUpdate) {
       throw new Error("Not found a ser with UserId" + userId);
