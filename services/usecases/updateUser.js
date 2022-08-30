@@ -5,17 +5,11 @@ export class UpdateUserUseCase {
     this.repository = userRepository;
     this.findUserById = findUserById;
   }
-  async exece(userUpdated, userId) {
+  async execute(userUpdated, userId) {
     const userToUpdate = await this.findUserById.execute(userId);
-
-    if (!userToUpdate) {
-      throw new Error("Not found a ser with UserId" + userId);
-    }
     const userModified = { ...userToUpdate, userUpdated };
     const userValidated = new UserEntity(userModified);
-
     userValidated.validate();
-
     return await this.repository.updateUser(userValidated.getUser());
   }
 }
