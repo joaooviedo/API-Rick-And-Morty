@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== "production") {
 
 export class JwtHelper {
   generateToken(data) {
-    console.log(data);
+    console.log(data)
     const token = jwt.sign({ data }, process.env.SECRET, { expiresIn: "12h" });
     return token;
   }
