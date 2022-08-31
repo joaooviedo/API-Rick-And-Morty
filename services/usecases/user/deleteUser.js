@@ -3,9 +3,9 @@ export class DeleteUserUseCase {
     this.repository = userRepository;
   }
   async execute(userId) {
-    const deletedUser = await this.repository.deletedUser(userId);
+    const deletedUser = await this.repository.deleteUser(userId);
     if (!deletedUser) {
-      throw new Error(" User not found");
+      throw new Error("User not found");
     }
     return deletedUser;
   }
