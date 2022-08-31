@@ -32,7 +32,7 @@ const userUpdated = await updateUserUseCase.execute(
     name: "Leonardo",
     email: "seumelhoremail@hotmail.com",
   },
-  "dbefef59-a9c7-40e5-9c9d-2b6710059ddd"
+  "9ac0b1b1-6aac-4fbe-a323-777ca395fa8a"
 );
 
 console.log(userUpdated);
