@@ -1,12 +1,12 @@
 import { config } from "dotenv";
-import { connect } from "mongoose";
-
+import mongo from "mongoose";
+const { connect } = mongo;
 if (process.env.NODE_ENV !== "production") {
   config();
 }
 
-export class MogoDbConnection {
+export class MongoDbConnection {
   async ConnectDb() {
-    await connect(process.env.DATABSE_URL);
+    await connect(process.env.DATABASE_URL);
   }
 }
