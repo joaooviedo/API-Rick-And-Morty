@@ -22,7 +22,7 @@ app.use("/characters", character.route());
 app.use("/users", user.route());
 app.use("/auth", auth.route());
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Servidor rodando em: http://localhost:3000");
 });
 

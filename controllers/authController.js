@@ -8,10 +8,12 @@ export class AuthController {
     try {
       const { email, password } = req.body;
       const user = await this.findUserByEmail.execute(email);
+
       const passwordIsValid = this.bcryptHelper.comparePasword(
         password,
         user.password
       );
+
       if (!passwordIsValid) {
         throw new Error("Invalid password try again");
       }
